@@ -47,6 +47,27 @@
 		else{
 			$confirmpassword = $_POST["confirmpassword"];
 		}
+    if (!isset($_POST["birthdate"])){
+			$hasError = true;
+			$err_birthdate="Date Required";
+		}
+		else{
+			$birthdate = $_POST["birthdate"];
+		}
+    if (!isset($_POST["birthmonth"])){
+			$hasError = true;
+			$err_birthmonth="Month Required";
+		}
+		else{
+			$birthmonth = $_POST["birthmonth"];
+		}
+    if (!isset($_POST["birthyear"])){
+			$hasError = true;
+			$err_birthyear="Year Required";
+		}
+		else{
+			$birthyear = $_POST["birthyear"];
+		}
 		if(!isset($_POST["gender"])){
 			$hasError = true;
 			$err_gender="Gender Required";
@@ -77,7 +98,7 @@
 		}
 
 		if(!$hasError){
-			echo "<h1>Form submitted</h1>";
+			echo "<h1>Doctor Account submitted</h1>";
 			echo $_POST["name"]."<br>";
 			echo $_POST["username"]."<br>";
 			echo $_POST["password"]."<br>";
@@ -102,7 +123,8 @@
         <li ><a href="DoctorAccount.php">Doctor Account </a></li>
         <li><a href="DoctorInformation.php">Doctor Info</a></li>
         <li><a href="PublicRelease.php">Public Release </a></li>
-        <li><a href="VaccinationUpate.php">Vaccination update</a></li>
+				<li><a href="VaccinationUpate.php">Vaccination update</a></li>
+        <li><a href="Vaccine Information.php">Vaccination Information</a></li>
       </ul>
     </div>
 		<form action="" method="post">
@@ -130,7 +152,12 @@
         <tr>
 					<td>Confirm Password</td>
 					<td>: <input type="password" name="confirmpassword" placeholder="">  </td>
-					<td><span> <?php echo $err_password;?> </span></td>
+					<td><span> <?php if ($password==$confirmpassword) {
+						echo $err_confirmpassword;
+					}
+					else {
+						echo "Wrong";
+					}?> </span></td>
 				</tr>
 				<tr>
 
@@ -141,7 +168,7 @@
 	 <option selected disabled >--Day--</option>
 	<?php for($i=1;$i<=31;$i++) echo "<option>$i</option>"; ?>
 	</select>
-	<span>&nbsp; <?php echo $err_birthdate;?></span>
+	<span><?php echo $err_birthdate;?></span>
 
 	<select name="birthmonth">
 	 <option selected disabled >--Month--</option>
@@ -158,7 +185,7 @@
 	<option>November</option>
 	<option>December</option>
 	</select>
-	<span>&nbsp; <?php echo $err_birthmonth;?></span>
+	<span><?php echo $err_birthmonth;?></span>
 
 
 	<select name="birthyear">
@@ -174,12 +201,12 @@
 				</tr>
         <tr>
 	<td>Email</td>
-	<td>: <input name="email" value="<?php echo $email; ?>" type="text" placeholder="">
+	<td>: <input name="email" value="<?php echo $email; ?>" type="text" placeholder="Enter email">
 	<span><?php echo $err_email; ?></span></td>
 	</tr>
 	<tr>
 	<td>Phone</td>
-	<td>: <input name="phone" value="<?php echo $phone; ?>" type="text" placeholder="">
+	<td>: <input name="phone" value="<?php echo $phone; ?>" type="text" placeholder="Enter phone number">
 	<span><?php echo $err_phone; ?></span></td>
 	</tr>
 	<tr>
