@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
     $rdate = $_POST["rdate"];
   }
 
-
+if(!$hasError){
 echo "<h1>Public Release submitted</h1>";
 echo $_POST["name"]."<br>";
 echo $_POST["pnumber"]."<br>";
@@ -85,6 +85,7 @@ echo $_POST["jdate"]."<br>";
 echo $_POST["oxygencylinder"]."<br>";
 echo $_POST["cost"]."<br>";
 echo $_POST["rdate"]."<br>";
+}
 }
  ?>
 <html>
@@ -106,42 +107,42 @@ echo $_POST["rdate"]."<br>";
           <table align="center">
             <tr>
               <td align="right">Patient name:</td>
-              <td><input type="text" name="name" placeholder="Enter Name"> </td>
+              <td><input type="text" name="name" value="<?php echo $name; ?>" placeholder="Enter Name"> </td>
               <td><span><?php echo $err_name; ?></span></td>
             </tr>
             <tr>
               <td align="right">Patient Number:</td>
-              <td><input type="number" name="pnumber" placeholder="Enter Number"> </td>
+              <td><input type="number" name="pnumber" value="<?php echo $pnumber; ?>" placeholder="Enter Number"> </td>
               <td><span><?php echo $err_pnumber; ?></span></td>
             </tr>
             <tr>
               <td align="right">Patient Room Number:</td>
-              <td><input type="number" name="rnumber" placeholder="Enter Room Number"> </td>
+              <td><input type="number" name="rnumber" value="<?php echo $rnumber; ?>" placeholder="Enter Room Number"> </td>
               <td><span><?php echo $err_rnumber; ?></span></td>
             </tr>
             <tr>
               <td align="right">Patient Bed Number:</td>
-              <td><input type="number" name="bnumber" placeholder="Enter Bed Number"> </td>
+              <td><input type="number" name="bnumber" value="<?php echo $bnumber; ?>" placeholder="Enter Bed Number"> </td>
               <td><span><?php echo $err_bnumber; ?></span></td>
             </tr>
             <tr>
               <td align="right">Patient Join Date:</td>
-              <td><input type="datetime-local" name="jdate" placeholder="Enter Join Date"> </td>
+              <td><input type="datetime-local" name="jdate" value="<?php echo $jdate; ?>" placeholder="Enter Join Date"> </td>
               <td><span><?php echo $err_jdate; ?></span></td>
             </tr>
             <tr>
               <td align="right">Patient Total Need Oxygen cylinder: </td>
-              <td><input type="number" name="oxygencylinder" placeholder="Total Need of Oxygen cylinder"> </td>
+              <td><input type="number" name="oxygencylinder" value="<?php echo $oxygencylinder; ?>" placeholder="Total Need of Oxygen cylinder"> </td>
               <td><span><?php echo $err_oxygencylinder; ?></span></td>
             </tr>
             <tr>
               <td align="right">Patient Total allover cost: </td>
-              <td><input type="number" name="cost" placeholder="Enter Total Cost"> </td>
+              <td><input type="number" name="cost" value="<?php echo $cost; ?>" placeholder="Enter Total Cost"> </td>
               <td><span><?php echo $err_cost; ?></span></td>
             </tr>
             <tr>
               <td align="right">Patient Release Date: </td>
-              <td><input type="datetime-local" name="rdate" placeholder="Enter Release Date"> </td>
+              <td><input type="datetime-local" name="rdate" value="<?php echo $rdate; ?>" placeholder="Enter Release Date"> </td>
               <td><span><?php echo $err_rdate; ?></span></td>
             </tr>
             <tr>

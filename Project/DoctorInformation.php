@@ -90,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
     $err_mid_name="Middle Name Required";
   }
   else {
-    $middle_name=$_POST["middle_name"];
+    $mid_name=$_POST["middle_name"];
   }
   if(empty($_POST["last_name"]))
   {
@@ -411,7 +411,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
               <tr>
                 <td align="right">First Name:</td>
                 <td>
-                  <input type="text" name="first_name" placeholder="Enter first name">
+                  <input type="text" name="first_name" value="<?php echo $first_name; ?>" placeholder="Enter first name">
                   <br>
                 </td>
                 <td><span><?php echo $err_first_name; ?> </span> </td>
@@ -419,7 +419,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
               <tr>
                 <td align="right">Middle Name:</td>
                 <td>
-                  <input type="text" name="middle_name" placeholder="Enter middle name">
+                  <input type="text" name="middle_name" value="<?php echo $mid_name; ?>" placeholder="Enter middle name">
                   <br>
                 </td>
                 <td><span><?php echo $err_mid_name; ?> </span> </td>
@@ -427,7 +427,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
               <tr>
                 <td align="right">Last Name:</td>
                 <td>
-                  <input type="text" name="last_name" placeholder="Enter last name">
+                  <input type="text" name="last_name" value="<?php echo $last_name; ?>" placeholder="Enter last name">
                   <br>
                 </td>
                 <td><span><?php echo $err_last_name; ?> </span> </td>
@@ -481,7 +481,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
               <tr>
                 <td align="right">Date of appointment:</td>
                 <td>
-                  <input type="datetime-local" name="appointment_time">
+                  <input type="datetime-local" name="appointment_time" value="<?php echo $appointment_time; ?>">
                 </td>
                 <td><span><?php echo $err_appointment_time;?></span></td>
               </tr>
@@ -499,26 +499,26 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
                 <tr>
                   <td>1.</td>
                   <td>SSC</td>
-                  <td><input type="test" name="inst_name1" placeholder="insert institute name"><span><?php echo $err_inst_name1; ?> </span></td>
-                  <td><input type="test" name="year1" placeholder="insert year of graduation"><span><?php echo $err_year1; ?> </span></td>
-                  <td><input type="test" name="div1" placeholder="insert division/cgpa"><span><?php echo $err_div1; ?> </span></td>
-                  <td><input type="test" name="position1" placeholder="insert position"><span><?php echo $err_position1; ?> </span></td>
+                  <td><input type="test" name="inst_name1" value="<?php echo $inst_name1; ?>" placeholder="insert institute name"><span><?php echo $err_inst_name1; ?> </span></td>
+                  <td><input type="test" name="year1" value="<?php echo $year1; ?>" placeholder="insert year of graduation"><span><?php echo $err_year1; ?> </span></td>
+                  <td><input type="test" name="div1" value="<?php echo $div1; ?>" placeholder="insert division/cgpa"><span><?php echo $err_div1; ?> </span></td>
+                  <td><input type="test" name="position1" value="<?php echo $position1; ?>" placeholder="insert position"><span><?php echo $err_position1; ?> </span></td>
                 </tr>
                 <tr>
                   <td>2.</td>
                   <td>HSC/A'Levels</td>
-                  <td><input type="test" name="inst_name2"><span><?php echo $err_inst_name2; ?></span></td>
-                  <td><input type="test" name="year2"><span><?php echo $err_year2; ?> </span></td>
-                  <td><input type="test" name="div2"><span><?php echo $err_div2; ?> </span></td>
-                  <td><input type="test" name="position2"><span><?php echo $err_position2; ?> </span></td>
+                  <td><input type="test" name="inst_name2" value="<?php echo $inst_name2; ?>"><span><?php echo $err_inst_name2; ?></span></td>
+                  <td><input type="test" name="year2" value="<?php echo $year2; ?>"><span><?php echo $err_year2; ?> </span></td>
+                  <td><input type="test" name="div2" value="<?php echo $div2; ?>"><span><?php echo $err_div2; ?> </span></td>
+                  <td><input type="test" name="position2" value="<?php echo $position2; ?>"><span><?php echo $err_position2; ?> </span></td>
                 </tr>
                 <tr>
                   <td>3.</td>
                   <td>MBBS</td>
-                  <td><input type="test" name="inst_name3"><span><?php echo $err_inst_name3; ?></span></td>
-                  <td><input type="test" name="year3"><span><?php echo $err_year3; ?> </span></td>
-                  <td><input type="test" name="div3"><span><?php echo $err_div3; ?> </span></td>
-                  <td><input type="test" name="position3"><span><?php echo $err_position3; ?> </span></td>
+                  <td><input type="test" name="inst_name3" value="<?php echo $inst_name3; ?>"><span><?php echo $err_inst_name3; ?></span></td>
+                  <td><input type="test" name="year3" value="<?php echo $year3; ?>"><span><?php echo $err_year3; ?> </span></td>
+                  <td><input type="test" name="div3" value="<?php echo $div3; ?>"><span><?php echo $err_div3; ?> </span></td>
+                  <td><input type="test" name="position3" value="<?php echo $position3; ?>"><span><?php echo $err_position3; ?> </span></td>
                 </tr>
         </table>
 
@@ -533,31 +533,31 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
           </tr>
           <tr>
             <td>1.</td>
-            <td><input type="test" name="job_desg1" placeholder="insert job designation"><span><?php echo $err_job_desg1; ?></span></td>
-            <td><input type="date" name="from1" placeholder="insert starting date"><span><?php echo $err_from1; ?></span></td>
-            <td><input type="date" name="to1" placeholder="insert regination date"><span><?php echo $err_to1; ?></span></td>
-            <td><input type="test" name="org_name1" placeholder="insert name of organization"><span><?php echo $err_org_name1; ?></span></td>
+            <td><input type="test" name="job_desg1" value="<?php echo $job_desg1; ?>" placeholder="insert job designation"><span><?php echo $err_job_desg1; ?></span></td>
+            <td><input type="date" name="from1" value="<?php echo $from1; ?>" placeholder="insert starting date"><span><?php echo $err_from1; ?></span></td>
+            <td><input type="date" name="to1" value="<?php echo $to1; ?>" placeholder="insert regination date"><span><?php echo $err_to1; ?></span></td>
+            <td><input type="test" name="org_name1" value="<?php echo $org_name1; ?>" placeholder="insert name of organization"><span><?php echo $err_org_name1; ?></span></td>
           </tr>
           <tr>
             <td>2.</td>
-            <td><input type="test" name="job_desg2" ><span><?php echo $err_job_desg2; ?></span></td>
-            <td><input type="date" name="from2" ><span><?php echo $err_from2; ?></span></td>
-            <td><input type="date" name="to2" ><span><?php echo $err_to2; ?></span></td>
-            <td><input type="test" name="org_name2"><span><?php echo $err_org_name2; ?></span></td>
+            <td><input type="test" name="job_desg2" value="<?php echo $job_desg2; ?>"><span><?php echo $err_job_desg2; ?></span></td>
+            <td><input type="date" name="from2" value="<?php echo $from2; ?>"><span><?php echo $err_from2; ?></span></td>
+            <td><input type="date" name="to2" value="<?php echo $to2; ?>"><span><?php echo $err_to2; ?></span></td>
+            <td><input type="test" name="org_name2" value="<?php echo $org_name2; ?>"><span><?php echo $err_org_name2; ?></span></td>
           </tr>
           <tr>
             <td>3.</td>
-            <td><input type="test" name="job_desg3" ><span><?php echo $err_job_desg3; ?></span></td>
-            <td><input type="date" name="from3" ><span><?php echo $err_from3; ?></span></td>
-            <td><input type="date" name="to3" ><span><?php echo $err_to3; ?></span></td>
-            <td><input type="test" name="org_name3"><span><?php echo $err_org_name3; ?></span></td>
+            <td><input type="test" name="job_desg3" value="<?php echo $job_desg3; ?>"><span><?php echo $err_job_desg3; ?></span></td>
+            <td><input type="date" name="from3" value="<?php echo $from3; ?>"><span><?php echo $err_from3; ?></span></td>
+            <td><input type="date" name="to3" value="<?php echo $to3; ?>"><span><?php echo $err_to3; ?></span></td>
+            <td><input type="test" name="org_name3" value="<?php echo $org_name3; ?>"><span><?php echo $err_org_name3; ?></span></td>
           </tr>
           <tr>
             <td>4.</td>
-            <td><input type="test" name="job_desg4" ><span><?php echo $err_job_desg4; ?></span></td>
-            <td><input type="date" name="from4" ><span><?php echo $err_from4; ?></span></td>
-            <td><input type="date" name="to4" ><span><?php echo $err_to4; ?></span></td>
-            <td><input type="test" name="org_name4"><span><?php echo $err_org_name4; ?></span></td>
+            <td><input type="test" name="job_desg4" value="<?php echo $job_desg4; ?>"><span><?php echo $err_job_desg4; ?></span></td>
+            <td><input type="date" name="from4" value="<?php echo $from4; ?>"><span><?php echo $err_from4; ?></span></td>
+            <td><input type="date" name="to4" value="<?php echo $to4; ?>"><span><?php echo $err_to4; ?></span></td>
+            <td><input type="test" name="org_name4" value="<?php echo $org_name4; ?>"><span><?php echo $err_org_name4; ?></span></td>
           </tr>
         </table>
         <h3><u>Membership:</u></h3>

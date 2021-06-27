@@ -30,8 +30,25 @@
 			$hasError = true;
 			$err_name="Name Required";
 		}
+		else if(strlen($_POST["name"])<= 4)
+	{
+		$hasError = true;
+		$err_name = "Name must be greater than 4 characters";
+	}
 		else{
 			$name = $_POST["name"];
+		}
+		if(empty($_POST["username"])){
+			$hasError = true;
+			$err_username="Username Required";
+		}
+		else if(strlen($_POST["username"])<= 5)
+	{
+		$hasError = true;
+		$err_username = "User Name must be greater than 5 characters";
+	}
+		else{
+			$username = $_POST["username"];
 		}
     if(empty($_POST["password"])){
 			$hasError = true;
@@ -43,6 +60,10 @@
     if(empty($_POST["confirmpassword"])){
 			$hasError = true;
 			$err_confirmpassword="Password Required";
+		}
+		else if ($_POST["password"]!=$_POST["confirmpassword"]) {
+			$hasError=true;
+			$err_confirmpassword="incorrect password";
 		}
 		else{
 			$confirmpassword = $_POST["confirmpassword"];
@@ -141,7 +162,7 @@
 				</tr>
 				<tr>
 					<td>Username</td>
-					<td>: <input type="text" name="username" placeholder="Username">  </td>
+					<td>: <input type="text" name="username" value="<?php echo $username; ?>" placeholder="Username">  </td>
 					<td><span> <?php echo $err_username;?> </span></td>
 				</tr>
 				<tr>
@@ -156,7 +177,7 @@
 						echo $err_confirmpassword;
 					}
 					else {
-						echo "Wrong";
+						echo "Wrong Password";
 					}?> </span></td>
 				</tr>
 				<tr>
