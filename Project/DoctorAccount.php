@@ -180,42 +180,44 @@
 						echo "Wrong Password";
 					}?> </span></td>
 				</tr>
-				<tr>
+
 
           <tr><td>Birth Date
-	</td>
-	<td>
-	:<select name="birthdate">
-	 <option selected disabled >--Day--</option>
-	<?php for($i=1;$i<=31;$i++) echo "<option>$i</option>"; ?>
-	</select>
-	<span><?php echo $err_birthdate;?></span>
+					</td>
+					<td>
+					:<select name="birthdate">
+					 <option selected disabled >--Day--</option>
+					<?php for($i=1;$i<=31;$i++) echo "<option>$i</option>"; ?>
+					</select>
+					<span><?php echo $err_birthdate;?></span>
 
-	<select name="birthmonth">
-	 <option selected disabled >--Month--</option>
-	<option>January</option>
-	<option>February</option>
-	<option>March</option>
-	<option>April</option>
-	<option>May</option>
-	<option>June</option>
-	<option>July</option>
-	<option>August</option>
-	<option>September</option>
-	<option>October</option>
-	<option>November</option>
-	<option>December</option>
-	</select>
-	<span><?php echo $err_birthmonth;?></span>
+					<select name="birthmonth">
+					 <option selected disabled >--Month--</option>
+					<option>January</option>
+					<option>February</option>
+					<option>March</option>
+					<option>April</option>
+					<option>May</option>
+					<option>June</option>
+					<option>July</option>
+					<option>August</option>
+					<option>September</option>
+					<option>October</option>
+					<option>November</option>
+					<option>December</option>
+					</select>
+					<span><?php echo $err_birthmonth;?></span>
 
 
-	<select name="birthyear">
-	 <option selected disabled >--Year--</option>
-	<?php for($i=1990;$i<=2021;$i++) echo "<option>$i</option>"; ?>
-	</select>
-	<span><?php echo $err_birthyear;?></span>
-	</td> </tr>
+					<select name="birthyear">
+					 <option selected disabled >--Year--</option>
+					<?php for($i=1990;$i<=2021;$i++) echo "<option>$i</option>"; ?>
+					</select>
+					<span><?php echo $err_birthyear;?></span>
+					</td> </tr>
 
+
+          <tr>
 					<td>Gender</td>
 					<td>: <input type="radio" value="Male" <?php if($gender=="Male") echo "checked"; ?> name="gender"> Male <input name="gender" <?php if($gender=="Female") echo "checked"; ?> value="Female" type="radio"> Female </td>
 					<td><span> <?php echo $err_gender;?> </span></td>
