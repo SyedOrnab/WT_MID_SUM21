@@ -22,6 +22,11 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
     $hasError = true;
     $err_name="Name Required";
   }
+  else if(strlen($_POST["name"])<= 4)
+{
+  $hasError = true;
+  $err_name = "Name must be greater than 4 characters";
+}
   else{
     $name = $_POST["name"];
   }
@@ -29,6 +34,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
     $hasError = true;
     $err_pnumber="Patient Number Required";
   }
+
   else{
     $pnumber = $_POST["pnumber"];
   }
@@ -112,17 +118,17 @@ echo $_POST["rdate"]."<br>";
             </tr>
             <tr>
               <td align="right">Patient Number:</td>
-              <td><input type="number" name="pnumber" value="<?php echo $pnumber; ?>" placeholder="Enter Number"> </td>
+              <td><input type="text" name="pnumber" value="<?php echo $pnumber; ?>" placeholder="Enter Number"> </td>
               <td><span><?php echo $err_pnumber; ?></span></td>
             </tr>
             <tr>
               <td align="right">Patient Room Number:</td>
-              <td><input type="number" name="rnumber" value="<?php echo $rnumber; ?>" placeholder="Enter Room Number"> </td>
+              <td><input type="text" name="rnumber" value="<?php  echo $rnumber; ?>"  placeholder="Enter Room Number"> </td>
               <td><span><?php echo $err_rnumber; ?></span></td>
             </tr>
             <tr>
               <td align="right">Patient Bed Number:</td>
-              <td><input type="number" name="bnumber" value="<?php echo $bnumber; ?>" placeholder="Enter Bed Number"> </td>
+              <td><input type="text" name="bnumber" value="<?php echo $bnumber; ?>" placeholder="Enter Bed Number"> </td>
               <td><span><?php echo $err_bnumber; ?></span></td>
             </tr>
             <tr>

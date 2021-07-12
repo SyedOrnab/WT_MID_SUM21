@@ -57,6 +57,7 @@
 		else{
 			$password = $_POST["password"];
 		}
+
     if(empty($_POST["confirmpassword"])){
 			$hasError = true;
 			$err_confirmpassword="Password Required";
@@ -100,13 +101,23 @@
 			$hasError = true;
 			$err_email="Email Required";
 		}
+		else if( strpos($_POST["email"],"@") ){
+				$email =($_POST["email"]);
+}
 		else{
-			$email = $_POST["email"];
-		}
+				$hasError = true;
+	$err_email ="Email should have @ ";
+}
+
     if(empty($_POST["phone"])){
 			$hasError = true;
 			$err_phone="Phone Required";
 		}
+		else if(strlen($_POST["phone"]) >= 12)
+	{
+		$hasError = true;
+		$err_phone = "Phone number must be lower than or equal 12 digits";
+	}
 		else{
 			$phone = $_POST["phone"];
 		}
@@ -150,14 +161,17 @@
     </div>
 		<form action="" method="post">
 		<fieldset>
-      <p align="middle">
+      <p align="center">
 			<table>
+				<tr>
+					<td colspan="4" align="center"><img src="download.jpg" alt=""> </td>
+				</tr>
         <tr>
-          <td colspan="2" align="center"><h3><u>Doctor Account</u></h3></td>
+          <td colspan="2" align="center"><h2><u>Doctor Account</u></h2></td>
         </tr>
 				<tr>
 					<td>Name</td>
-					<td>: <input type="text" name="name" value="<?php echo $name; ?>" placeholder="Your name ...."> </td>
+					<td>: <input type="text" name="name" value="<?php echo $name; ?>" placeholder="Enter Your name"> </td>
 					<td><span> <?php echo $err_name;?> </span></td>
 				</tr>
 				<tr>

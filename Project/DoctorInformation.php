@@ -81,6 +81,11 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
     $hasError=true;
     $err_first_name="First Name Required";
   }
+  else if(strlen($_POST["first_name"])<= 4)
+{
+  $hasError = true;
+  $err_first_name = "Name must be greater than 4 characters";
+}
   else {
     $first_name=$_POST["first_name"];
   }
@@ -89,6 +94,11 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
     $hasError=true;
     $err_mid_name="Middle Name Required";
   }
+  else if(strlen($_POST["middle_name"])<= 4)
+{
+  $hasError = true;
+  $err_mid_name = "Name must be greater than 4 characters";
+}
   else {
     $mid_name=$_POST["middle_name"];
   }
@@ -97,6 +107,11 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
     $hasError=true;
     $err_last_name="Last Name Required";
   }
+  else if(strlen($_POST["last_name"])<= 4)
+{
+  $hasError = true;
+  $err_last_name = "Name must be greater than 4 characters";
+}
   else {
     $last_name=$_POST["last_name"];
   }
