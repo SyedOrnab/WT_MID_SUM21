@@ -1,7 +1,7 @@
 <?php include 'controllers/Usercontrollers.php'; ?>
 <html>
-	<head></head>
-	<title>Login</title>
+	<head><title>Login</title></head>
+
 	<body>
 		<form action="" method="post">
 		<h1>Login</h1>
